@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+:root
+{
+--tui_body_bg: #fafbfc;
+--bs-primary-rgb: rgb(14, 35, 65);
+--tui_body_color:#2c384a;
+--tui_white:#fff;
+--tui_link_color: #2c384a;
+--tui_side_width: 288px;
+--tui_opacity_50: .6;
+--tui_font15:15px;
+--tui_font14:14px;
+--tui_font13:13px;
+--tui_font_roboto: 'Nunito Sans', sans-serif;
+--tui_full_width:100%;
+--tui_bottomtab_xs_height: 80px;
+--tui_bg_danger_gradient: linear-gradient(55deg, #ef376e 0%, #d63464 100%);
+--tui_bg_warning_gradient: linear-gradient(55deg, #ffdb4d 0%, #e6b800 100%);
+--tui_bg_success_gradient: linear-gradient(55deg, #85dbad 0%, #49b87c 100%);
+--tui_bg_info_gradient: linear-gradient(55deg, #476272 0%, #0E2341 100%);
+--tui_offcanvas_width:320px;
+--main-color1:#445d9f;
+}
+.bg-primary {
+background-color: var(--bs-primary-rgb) !important;
+}
+body
+{
+background: var(--tui_body_bg);
+font-family: var(--tui_font_roboto);
+transition: all .15s ease;
+color: var(--tui_body_color);
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+max-width: 1690px;
+}
+.btn.btn-primary {
+border-color: #445d9f;
+background: #445d9f;
+padding: 12px 0;
+}
+.btn.btn-primary:hover{
+background: #233463;
+padding: 12px 0;
+transition: 0.2s ease-out;
+}
+.tui_auth_page {
+display: flex;
+position: relative;
+width: 100vw;
+height: 100vh;
+flex-direction: column;
+overflow-y: auto;
+background-color: #fafbfc;
+}
+.tui_brand_box {
+width: 275px;
+text-align: left;
+height: 48px;
+}
+.tui_brand_box img {
+width: auto;
+height: 100%;
+}
+.tui_auth_section {
+position: relative;
+flex-grow: 1;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px 20px;
+}
+.tui_auth_section_bg {
+position: absolute;
+height: calc(100% - 17vh);
+width: 100%;
+top: 17vh;
+left: 0;
+overflow: hidden;
+pointer-events: none;
+background: url(../images/login_bg1.svg) center 10px no-repeat;
+background-size: cover;
+}
+.tui_auth_section_bg:before {
+content: "";
+display: block;
+position: absolute;
+width: 200%;
+height: 300%;
+top: -100%;
+left: -50%;
+background: url(../images/login_bg_dots.svg);
+transform: rotate(-28deg);
+}
+.tui_auth_section_bg:after {
+content: "";
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background: url(../images/login_bg_op.svg) center top no-repeat;
+background-size: 100%;
+}
+.tui_auth_card {
+width: 100%;
+max-width: 480px;
+background: #fff;
+box-shadow: 0 24px 64px #26214a1a;
+border-radius: 12px;
+padding: 30px 60px;
+position: relative;
+}
+.form-floating > .form-control, .form-floating > .form-control-plaintext, .form-floating > .form-select {
+height: 3.4rem;
+}
+body .form-floating .form-control {
+border: none;
+border-bottom: 1px solid #BBBBBB;
+border-radius: 0;
+padding-left: 0;
+}
+.form-floating>label {
+padding-left: 0;
+font-weight: 600;
+font-size: 16px;
+}
+.tui_auth_card h4 {
+font-weight: 700;
+}
+body .form-control:focus {
+background-color: transparent;
+outline: 0;
+box-shadow: none;
+}
+.form-floating>.form-control-plaintext~label, .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
+opacity: .65;
+transform: scale(.85) translateY(-0.5rem) translateX(0.0rem);
+}
+.forgot_password_link {
+color: #37393C;
+}
+.big-title {
+font-weight: 700;
+font-size: 30px;
+line-height: 49px;
+color: #445D9F;
+}
+.calculator-form-box {
+background: #FFFFFF;
+box-shadow: 0px 0px 30px rgb(0 0 0 / 5%);
+border-radius: 15px;
+margin-bottom: 70px;
+}
+.calculator_form_head {
+background: #445D9F;
+border-bottom: 1px solid #EEEDEA;
+border-radius: 10px 10px 0px 0px;
+padding: 20px 20px;
+}
+.bl_title_address{
+text-align: right;
+}
+.bl_title_address h3 {
+font-weight: 600;
+font-size: 20px;
+line-height: 30px;
+color: #FFFFFF;
+}
+.bl_title_address p {
+font-weight: 400;
+font-size: 15px;
+line-height: 24px;
+color: #F2F2F2;
+margin-bottom: 0;
+}
+.white_form_area {
+padding: 40px 40px 40px;
+}
+.file-upload-content {
+border: 2px dashed #AFB9C7;
+}
+.degree_unit {
+position: absolute;
+bottom: 7px;
+right: 0;
+color: #828282;
+font-weight: 600;
+background: #fff;
+padding: 0 2px;
+}
+.checkbox_list {
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+margin: 0 -15px;
+}
+.checkbox_list li {
+width: 25%;
+margin-top: 15px;
+list-style: none;
+padding: 0 15px 12px;
+}
+.bl_custom_checkbox {
+position: relative;
+display: inline-block;
+cursor: pointer;
+}
+.checkbox_input {
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+height: 100%;
+z-index: 5;
+width: 100%;
+opacity: 0;
+cursor: pointer;
+}
+.bl_custom_checkbox label {
+position: relative;
+padding-left: 32px;
+font-weight: 600;
+}
+.bl_custom_checkbox label:before {
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+width: 22px;
+height: 22px;
+content: "";
+background: #fff;
+border-radius: 2px;
+border: 1px solid #445D9F;
+border-radius: 2px;
+}
+.bl_custom_checkbox .checkbox_input:checked ~ label:after {
+content: "";
+width: 14px;
+height: 7px;
+background: transparent;
+position: absolute;
+left: 4px;
+top: 6px;
+border-left: 2px solid #fff;
+border-bottom: 2px solid #fff;
+transform: rotate(-41deg);
+}
+.bl_custom_checkbox .checkbox_input:checked ~ label:before {
+background: #445D9F;
+}
+.file-upload {
+background-color: #ffffff;
+width: 100%;
+padding: 20px;
+max-width: 625px;
+}
+.file-upload-btn {
+width: 100%;
+margin: 0;
+color: #fff;
+background: #1FB264;
+border: none;
+padding: 10px;
+border-radius: 4px;
+border-bottom: 4px solid #15824B;
+transition: all .2s ease;
+outline: none;
+text-transform: uppercase;
+font-weight: 700;
+}
+.file-upload-btn:hover {
+background: #1AA059;
+color: #ffffff;
+transition: all .2s ease;
+cursor: pointer;
+}
+.file-upload-btn:active {
+border: 0;
+transition: all .2s ease;
+}
+.file-upload-content {
+display: none;
+text-align: center;
+}
+.file-upload-input {
+position: absolute;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+outline: none;
+opacity: 0;
+cursor: pointer;
+}
+.image-upload-wrap {
+margin-top: 20px;
+border: 2px dashed #AFB9C7;
+position: relative;
+border-radius: 10px;
+}
+.image-dropping, .image-upload-wrap:hover {
+background-color: #cedbff;
+border: 2px dashed #ffffff;
+}
+.image-title-wrap {
+padding: 0 15px 15px 15px;
+color: #222;
+}
+.drag-text {
+text-align: center;
+}
+.drag-text h3 {
+font-weight: 100;
+text-transform: uppercase;
+color: #15824B;
+padding: 35px 12px 28px;
+font-weight: 500;
+font-size: 16px;
+line-height: 25px;
+text-transform: uppercase;
+color: #7E93AF;
+}
+.file-upload-image {
+max-height: 200px;
+max-width: 200px;
+margin: auto;
+padding: 20px;
+}
+.remove-image {
+width: 200px;
+margin: 0;
+color: #fff;
+background: #cd4535;
+border: none;
+padding: 10px;
+border-radius: 4px;
+border-bottom: 4px solid #b02818;
+transition: all .2s ease;
+outline: none;
+text-transform: uppercase;
+font-weight: 700;
+}
+.remove-image:hover {
+background: #c13b2a;
+color: #ffffff;
+transition: all .2s ease;
+cursor: pointer;
+}
+.remove-image:active {
+border: 0;
+transition: all .2s ease;
+}
+.send_btn_cover .btn.btn-primary.send_btn {
+padding: 10px 88px;
+font-size: 18px;
+margin-top: 30px;
+}
+#custom-button {
+padding: 6px 15px;
+color: #445d9f;
+background-color: transparent;
+border: 1px solid #445d9f;
+border-radius: 5px;
+cursor: pointer;
+}
+#custom-button:hover {
+background-color: transparent;
+}
+#custom-text {
+margin-left: 10px;
+font-family: sans-serif;
+font-weight: 500;
+/* color: #aaa; */
+}
+.be__form_area {
+margin-bottom: 20px;
+}
+.be__form_area label {
+font-size: 15px;
+font-weight: 500;
+margin-bottom: 6px;
+display: block;
+}
+.be__form_area input {
+width: 100%;
+}
+.be__form_area .intl-tel-input.allow-dropdown {
+width: 100%;
+}
+.be__form_area 
+input, .be__form_area input {
+height: 45px;
+border-radius: 6px;
+border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.be__form_area 
+input:focus, .be__form_area input:focus {
+border: var(--bs-border-width) solid var(--bs-border-color);
+border-radius: 6px;
+outline: 0;
+}
+.contact-form-heading {
+font-size: 20px;
+font-weight: 700;
+}
+::placeholder {
+color: #767676 !important;
+}
+.bl_head_logo {
+width: 250px;
+height: 100px;
+overflow: hidden;
+}
+.bl_head_logo img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+object-position: left;
+}
+.be__form_area_quote .value__type .form-select,
+.be__form_area_quote .value__type .form-select:focus {
+  height: 45px;
+  /* filter: brightness(0.5); */
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  text-align: center;
+  outline: 0;
+  font-style: italic;
+  /* padding-right: 5px; */
+    padding-left: 5px;
+}
+.be__form_area_quote {
+  position: relative;
+}
+
+.be__form_area_quote .value__type {
+  position: absolute;
+  top: 0;
+}
+.be__form_area_quote .value__type {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: #445d9f17;
+  width: 110px;
+  text-align: center;
+  height: 43px;
+  line-height: 45px;
+  border-radius: 0px 6px 6px 0px;
+}
+.be__form_area_quote input {
+  padding-right:110px;
+}
+.be__table tbody tr th {
+  color: #ffffff !important;
+  text-align: center;
+}
+.be__table tbody tr td {
+  color: #000000 !important;
+  text-align: center;
+}
+.table_formControl input {
+  /* background: transparent !important;
+  border: 0; */
+  text-align: center;
+  width: 100%;
+}
+.be__table td, .be__table th {
+  vertical-align: middle;
+}
+.table_formControl input:focus{
+  border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.be__table .be__form_area_quote input {
+  text-align: center;
+  /* background: transparent; */
+  /* border: 0px; */
+  padding-right: 20px;
+}
+.be__table .be__form_area_quote .value__type {
+  background: transparent;
+  line-height: 35px;
+  height: auto;
+  font-style: normal;
+  font-weight: 700;
+  color: #415897;
+}
+@media only screen and (max-width:991px) {
+.checkbox_list li {
+width: 33.33%;
+}
+}
+@media only screen and (max-width:768px) {
+.checkbox_list li {
+width: 50%;
+}
+.white_form_area {
+padding: 40px 20px 40px;
+}
+.big-title {
+padding: 0px 20px;
+font-size: 26px;
+line-height: normal;
+}
+.bl_title_address p{
+font-size: 13px;
+}
+.bl_title_address h3{
+font-size: 18px;
+}
+}
+@media only screen and (max-width:575px) {
+.tui_auth_card {
+padding: 30px 26px;
+}
+.send_btn_cover{
+text-align: center;
+}
+.checkbox_list li {
+width: 100%;
+}
+.bl_head_logo {
+margin: 0 auto;
+margin-bottom: 15px;
+}
+.bl_title_address {
+text-align: center;
+}
+}
